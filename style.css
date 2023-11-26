@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url(imges/dolunay.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 2rem;
+    color: rgb(224, 223, 223);
+}
+h1{
+    text-align: center;
+   
+}
+.df{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+}
+ 
+.container{
+    padding: 1.3rem 1rem; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.options select{
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    outline: none;
+    border-radius: 5px;
+}
+.kalan{
+    margin-top: 1rem;
+    color: white;
+}
