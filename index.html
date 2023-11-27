@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Alarm</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>NAMAZ VAKTİ</h1>
+    <div id="icon">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <section class="bar">
+        <i class="fa-solid fa-xmark"></i>
+        <a href="ayarlar.html"><div><p>Ayarlar</p></div></a>
+        <a href="#"><div><p>#####</p></div></a>
+        <a href="#"><div><p>#####</p></div></a>
+        <a href="#"><div><p>#####</p></div></a>
+    </section>
+    <h1 id="time">NAMAZ VAKTİ</h1>
+    <div class="kayan">
+         <p id="sehirler" class="kayan-text">Arapgir</p>
+    </div>
+   
     <div class="container">
         <div class="sabah df">
             <div class="sabah_text">SABAH</div>
@@ -47,7 +62,7 @@
 
     <footer>
         <div class="footer">
-            <div class="date">
+            <div id="date">
                 <h1>26/11/2023</h1>
             </div>
             <div class="kalan">

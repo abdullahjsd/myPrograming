@@ -10,6 +10,48 @@ body{
     height: 100vh;
     padding: 2rem;
     color: rgb(224, 223, 223);
+    position: relative;
+}
+a{
+    color: rgb(224, 212, 212);
+    text-decoration: none;
+}
+#icon{
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+
+}
+
+.bar{
+    width: 200px;
+    height:100vh ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgb(59, 39, 39);
+    display: none;
+    border-radius: 0 10px 10px 0 ;
+
+}
+.fa-xmark{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.bar div:nth-child(2){
+   margin: 2rem 0 0 1rem; 
+
+}
+.bar div{
+    margin: 1rem 0 0 1rem; 
+    border-bottom: 1px solid rgb(168, 163, 163);
+    width: 150px;
+    font-size: 1.5rem;
 }
 h1{
     text-align: center;
@@ -20,9 +62,32 @@ h1{
     justify-content: space-between;
     margin-top: 1.2rem;
 }
+.kayan{
+    overflow: hidden;
+    margin: 0 4rem;
+}
+#sehirler{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(207, 41, 41);
+
+}
+.kayan-text{
+    white-space: nowrap;
+    animation: kayanYazi 10s linear infinite; 
+}
+@keyframes kayanYazi {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
  
 .container{
-    padding: 1.3rem 1rem; 
+    padding: 0 1rem; 
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -36,4 +101,9 @@ h1{
 .kalan{
     margin-top: 1rem;
     color: white;
+}
+#date{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
