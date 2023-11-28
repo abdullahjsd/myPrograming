@@ -17,25 +17,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
 
 
-// document.addEventListener("click", function(){
-//     document.querySelector(".fa-bars").style.display="none";
+document.addEventListener("click", function(){
+     document.querySelector(".fa-bars").style.display="none";
     
-//   });
-
-//    fetch("https://ezanvakti.herokuapp.com/vakitler?ilce=9695")
-//    .then(response => response.json())
-//    .then(responseJson => {
-
-//     console.log(responseJson[0])
-
- 
-//    })
-//    .catch(error => {
-//      console.error("Hata oluştu:", error);
-//    });
+   });
+    fetch("https://namaz-vakti.vercel.app/api/timesFromCoordinates?date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey&lat=39.049340&lng=38.494170")
+    .then(response => response.json())
+    .then(responseJson => {
+      console.log(responseJson)
+      responseJson.forEach(city => console.log(city){
+        
+      });
+    })
+    .catch(error => {
+      console.error("Hata oluştu:", error);
+    });
 
 
 //!     TARİH  SAAT
