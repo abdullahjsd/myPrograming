@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    background-image:url(imges/dolunay.jpg);
+    /* background-image:url(imges/dolunay.jpg); */
+    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -97,6 +98,11 @@ h1{
     font-size: 1.4rem;
     outline: none;
     border-radius: 5px;
+}
+.options button{
+    font-size: 1.3rem;
+    padding: .1rem;
+    margin-left: 1rem;
 }
 .kalan{
     margin-top: 1rem;
