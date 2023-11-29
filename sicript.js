@@ -71,6 +71,8 @@ fetch(`https://namaz-vakti.vercel.app/api/timesFromCoordinates?date=${today}&day
   ikindiTime.innerHTML  = ikindiBeforeSunriseTime;
   aksamTime.innerHTML   = aksamBeforeSunriseTime;
   yatsiTime.innerHTML   = yatsiBeforeSunriseTime;
+
+ 
 })
 .catch(error => {
   console.error("Hata oluştu:", error);
@@ -113,31 +115,52 @@ function saatGoster() {
     
     let saatGosterElementi = document.getElementById("time");
     saatGosterElementi.textContent = saat + ":" + dakika + ":" + saniye;
-     
-  }
+    
+    return saatGosterElementi.textContent
+}
+
   
 //! alarm
 // function alarm(){
-//   if(saatGoster().value == sabahTime){
+//   if(saatGoster() === sabahTime.textContent){
 //     console.log("sabah vakti geli")
     
 //   }
 // }
 
- 
+
+
 
 
       //! DENEME ALANI
+      document.addEventListener("DOMContentLoaded", function() {
+  // Alarm zamanını al
+  const alarmTimeInput =sabahTime
+  const alarmTime = alarmTimeInput.value;
 
+  console.log(alarmTimeInput)
 
+  // Şu anki tarih ve saat bilgisi
+  const now = new Date();
+  const currentHours = now.getHours();
+  const currentMinutes = now.getMinutes();
+
+  // Alarmın ayarlandığı tarih ve saat bilgisi
+  const alarmDate = new Date();
+  const [alarmHours, alarmMinutes] = alarmTime.split(":");
+  alarmDate.setHours(parseInt(alarmHours));
+  alarmDate.setMinutes(parseInt(alarmMinutes));
+  alarmDate.setSeconds(0);
+
+  // Alarmın kaç milisaniye sonra çalacağını hesapla
+  const timeDifference = alarmDate - now;
+
+  // Zamanlayıcıyı kur
+  setTimeout(function () {
+    // Alarm çalıştığında yapılacak işlemler
+    alert("Alarm Çalıyor!");
+  }, timeDifference);
+});
     
-
-
-
-
-    
-
-
-
 
 
