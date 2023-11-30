@@ -27,3 +27,33 @@ a{
 .fa-house-chimney:hover{
     color: rgb(65, 9, 9);
 }
+.container{
+    padding: 1rem;
+}
+.container ul li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.container ul li p {
+    font-size: 1.3rem;
+ 
+}
+.container ul li i{
+    font-size: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+ 
+}
+ 
+.fa-check{
+    border: 2px solid rgb(233, 214, 214);
+    padding: .2rem;
+    border-radius: 5px;
+ 
+    
+}
+.ckick{
+    color: red;
+}
