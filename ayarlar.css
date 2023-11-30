@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-image:url(imges/dolunay.jpg); */
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 2rem;
+    color: rgb(224, 223, 223);
+    position: relative;
+}
+a{
+    color: rgb(224, 212, 212);
+    text-decoration: none;
+}
+.fa-house-chimney{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+.fa-house-chimney:hover{
+    color: rgb(65, 9, 9);
+}

@@ -4,7 +4,14 @@ let ikindiTime  =   document.querySelector(".ikindi_time")
 let aksamTime   =   document.querySelector(".aksam_time")
 let yatsiTime   =   document.querySelector(".yatsi_time")
 let imsakTime   =   document.querySelector(".imsak_time")
- 
+let kalanDk     =   document.getElementById("kalanDk")
+
+let f_imsak;
+let f_sabah;
+let f_ogle;
+let f_ikindi;
+let f_aksam;
+let f_yatsi;
 
 
 //! today
@@ -40,10 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
 //! fetch api
 fetch(`https://namaz-vakti.vercel.app/api/timesFromCoordinates?date=${today}&days=3&timezoneOffset=180&calculationMethod=Turkey&lat=39.049340&lng=38.494170`)
 .then(response => response.json())
-.then(responseJson => {
+.then((responseJson) =>{
   let firstDate = Object.keys(responseJson.times)[0];
   let firstDatePrayerTimes = responseJson.times[firstDate];
   //imsak vaktine 3 dk eklendi
@@ -72,15 +80,21 @@ fetch(`https://namaz-vakti.vercel.app/api/timesFromCoordinates?date=${today}&day
   aksamTime.innerHTML   = aksamBeforeSunriseTime;
   yatsiTime.innerHTML   = yatsiBeforeSunriseTime;
 
- 
+  f_imsak   =   imsakTime.innerHTML
+  f_sabah   =   sabahTime.innerHTML
+  f_ogle    =   ogleTime.innerHTML
+  f_ikindi  =   ikindiTime.innerHTML
+  f_aksam   =   aksamTime.innerHTML
+  f_yatsi   =   yatsiTime.innerHTML
 })
 .catch(error => {
   console.error("Hata oluştu:", error);
 });
 
+
 //? Saat formatındaki bir string'i dakika cinsinden çevirir
 function getMinutesFromTimeString(timeString) {
-const [hours, minutes] = timeString.split(":").map(Number);
+let [hours, minutes] = timeString.split(":").map(Number);
 return hours * 60 + minutes;
 }
 
@@ -121,46 +135,107 @@ function saatGoster() {
 
   
 //! alarm
-// function alarm(){
-//   if(saatGoster() === sabahTime.textContent){
-//     console.log("sabah vakti geli")
-    
-//   }
-// }
+
+
+//! DENEME ALANI
+
+const timer = setInterval(function() {
+  kalanDk.innerHTML=saatGoster()
+
+  // f_imsak= "18:26"
+  // f_sabah= "18:26"
+  // f_ogle=  "18:26"
+  // f_aksam= "18:26"
+  // f_yatsi= "18:26"
+
+
+
+  function sondanSil(str, silinecekKarakter) {
+    const indeks = str.lastIndexOf(silinecekKarakter);
+    if (indeks !== -1) {
+        const yeniString = str.slice(0, indeks);
+        return yeniString;
+    } 
+  }
+  // Örnek kullanım
+  const gelenSaat = saatGoster();
+  const silinecekKarakter = ":";
+  const yeniString = sondanSil(gelenSaat, silinecekKarakter);
+
+
+  if(yeniString === f_imsak){
+    console.log("imsak vakit gelid ")
+  }
+  if(yeniString === f_sabah){
+    console.log("sabah vakit gelid ")
+  }
+  if(yeniString === f_ogle){
+    console.log("ogle vakit gelid ")
+  }
+  if(yeniString === f_ikindi){
+    console.log("ikindi vakit gelid ")
+  }
+  if(yeniString === f_aksam){
+    console.log("aksam vakit gelid ")
+  }
+  if(yeniString === f_yatsi){
+    console.log("yatsi vakit gelid ")
+  }
+
+  
+ 
 
 
 
 
 
-      //! DENEME ALANI
-      document.addEventListener("DOMContentLoaded", function() {
-  // Alarm zamanını al
-  const alarmTimeInput =sabahTime
-  const alarmTime = alarmTimeInput.value;
 
-  console.log(alarmTimeInput)
 
-  // Şu anki tarih ve saat bilgisi
-  const now = new Date();
-  const currentHours = now.getHours();
-  const currentMinutes = now.getMinutes();
 
-  // Alarmın ayarlandığı tarih ve saat bilgisi
-  const alarmDate = new Date();
-  const [alarmHours, alarmMinutes] = alarmTime.split(":");
-  alarmDate.setHours(parseInt(alarmHours));
-  alarmDate.setMinutes(parseInt(alarmMinutes));
-  alarmDate.setSeconds(0);
 
-  // Alarmın kaç milisaniye sonra çalacağını hesapla
-  const timeDifference = alarmDate - now;
+  // console.log(f_sabah)
+  // console.log(f_ogle)
+  // console.log(f_ikindi)
+  // console.log(f_aksam)
+  // console.log(f_yatsi)
+  
 
-  // Zamanlayıcıyı kur
-  setTimeout(function () {
-    // Alarm çalıştığında yapılacak işlemler
-    alert("Alarm Çalıyor!");
-  }, timeDifference);
-});
-    
+ 
+}, 1000);
+      
 
+
+
+// const delayInMilliseconds = 700;
+// setTimeout(function() {
+//   console.log(f_imsak)
+//   console.log(f_sabah)
+//   console.log(f_ogle)
+//   console.log(f_ikindi)
+//   console.log(f_aksam)
+//   console.log(f_yatsi)
+
+
+//   kalanDk.innerHTML=saatGoster()
+
+
+
+
+// }, delayInMilliseconds);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
 
