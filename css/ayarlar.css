@@ -27,10 +27,43 @@ a{
 .fa-house-chimney:hover{
     color: rgb(65, 9, 9);
 }
-.container{
-    padding: 1rem;
+ .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+#app {
+    text-align: center;
 }
-.container ul li{
+
+label {
+    margin-right: 10px;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container ul li{
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -42,7 +75,7 @@ a{
 }
 .container ul li i{
     font-size: 1rem;
-    margin-right: 2rem;
+    margin-right: 1rem;
     cursor: pointer;
  
 }
@@ -54,6 +87,6 @@ a{
  
     
 }
-.ckick{
-    color: red;
-}
+.clicked{
+    margin-right: 2rem; 
+} */
