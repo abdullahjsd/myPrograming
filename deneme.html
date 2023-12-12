@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Boxes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .toggle-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .toggle-box {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #dcdcdc;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .toggle-switch {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .toggle-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            color: #777;
+            user-select: none;
+        }
+
+        .checked {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toggle-container">
+        <div class="toggle-box" id="toggleBox1">
+            <div class="toggle-switch" id="toggleSwitch1"></div>
+            <div class="toggle-text" id="toggleText1">Off</div>
+        </div>
+
+        <div class="toggle-box" id="toggleBox2">
+            <div class="toggle-switch" id="toggleSwitch2"></div>
+            <div class="toggle-text" id="toggleText2">Off</div>
+        </div>
+
+        <div class="toggle-box" id="toggleBox3">
+            <div class="toggle-switch" id="toggleSwitch3"></div>
+            <div class="toggle-text" id="toggleText3">Off</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Toggle Box 1
+            var toggleBox1 = document.getElementById("toggleBox1");
+            var toggleSwitch1 = document.getElementById("toggleSwitch1");
+            var toggleText1 = document.getElementById("toggleText1");
+            var isChecked1 = false;
+
+            toggleBox1.addEventListener("click", function () {
+                isChecked1 = !isChecked1;
+
+                if (isChecked1) {
+                    toggleSwitch1.style.transform = "translateX(20px)";
+                    toggleBox1.classList.add("checked");
+                } else {
+                    toggleSwitch1.style.transform = "translateX(0)";
+                    toggleBox1.classList.remove("checked");
+                }
+
+                var buttonText1 = isChecked1 ? "On" : "Off";
+                toggleText1.innerHTML = buttonText1;
+
+                console.log("Durum 1: " + (isChecked1 ? "Kapalı" : "Açık"));
+            });
+
+            // Toggle Box 2
+            var toggleBox2 = document.getElementById("toggleBox2");
+            var toggleSwitch2 = document.getElementById("toggleSwitch2");
+            var toggleText2 = document.getElementById("toggleText2");
+            var isChecked2 = false;
+
+            toggleBox2.addEventListener("click", function () {
+                isChecked2 = !isChecked2;
+
+                if (isChecked2) {
+                    toggleSwitch2.style.transform = "translateX(20px)";
+                    toggleBox2.classList.add("checked");
+                } else {
+                    toggleSwitch2.style.transform = "translateX(0)";
+                    toggleBox2.classList.remove("checked");
+                }
+
+                var buttonText2 = isChecked2 ? "On" : "Off";
+                toggleText2.innerHTML = buttonText2;
+
+                console.log("Durum 2: " + (isChecked2 ? "Kapalı" : "Açık"));
+            });
+
+            // Toggle Box 3
+            var toggleBox3 = document.getElementById("toggleBox3");
+            var toggleSwitch3 = document.getElementById("toggleSwitch3");
+            var toggleText3 = document.getElementById("toggleText3");
+            var isChecked3 = false;
+
+            toggleBox3.addEventListener("click", function () {
+                isChecked3 = !isChecked3;
+
+                if (isChecked3) {
+                    toggleSwitch3.style.transform = "translateX(20px)";
+                    toggleBox3.classList.add("checked");
+                } else {
+                    toggleSwitch3.style.transform = "translateX(0)";
+                    toggleBox3.classList.remove("checked");
+                }
+
+                var buttonText3 = isChecked3 ? "On" : "Off";
+                toggleText3.innerHTML = buttonText3;
+
+              
+            });
+        });
+    </script>
+
+</body>
+</html>

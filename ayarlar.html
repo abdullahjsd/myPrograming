@@ -9,17 +9,67 @@
 </head>
 <body>
     <a href="index.html"><i class="fa-solid fa-house-chimney"></i></a>
-   <div class="container">
-    <div id="app">
-        <label for="myCheckbox">Check Box:</label>
-        <input type="checkbox" id="myCheckbox" name="myCheckbox">
-        <p id="result"></p>
-    </div>
-   </div>
+    <ul >
+        <li>
+            <div class="container">
+                <div class="vakitler">
+                    <h2>SABAH</h2>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-box" id="toggleBox">
+                        <div class="toggle-switch" id="toggleSwitch"></div>
+                        <div class="toggle-text" id="toggleText"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </li>
+        <li>
+            <div class="container">
+                <div class="vakitler">
+                    <h2>ÖĞLE</h2>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-box" id="toggleBox">
+                        <div class="toggle-switch" id="toggleSwitch"></div>
+                        <div class="toggle-text" id="toggleText"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </li>
+    </ul>
+
 
        
        
-     
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var toggleBox = document.getElementById("toggleBox");
+        var toggleSwitch = document.getElementById("toggleSwitch");
+        var toggleText = document.getElementById("toggleText");
+        var isChecked = false;
+
+        toggleBox.addEventListener("click", function () {
+            isChecked = !isChecked;
+
+            if (isChecked) {
+                toggleSwitch.style.transform = "translateX(30px)";
+                toggleBox.classList.add("checked");
+                console.log("if e girdi")
+            } else {
+                toggleSwitch.style.transform = "translateX(0)";
+                toggleBox.classList.remove("checked");
+                console.log("else girdi")
+            }
+
+ 
+ 
+
+ 
+        });
+    });
+</script>
 
     
 </body>
